@@ -11,10 +11,7 @@
 - Write forms that use a 'namespace' for parameters
 - Use `_method` param to emulate PUT and DELETE requests
 
-## Rest && Forms
-
 ## Outline
-
 
 * Why AR + Sinatra
 * Demo Tunr Solution
@@ -275,7 +272,7 @@ REST defines five main methods, each of which corresponds to one of the CRUD fun
 
 We've done `GET` requests, the next thing we're going to talk about is `POST` requests. There a little bit different in the way they get initiated.
 
-With `GET` requests, a user types a URL into the browser or clicks on a link. A `POST` request traditionally only happens when the intended behavior of the request is to create something in the database.
+With `GET` requests, a user types a URL into the browser or clicks on a link. A `POST` request traditionally only happens when the user submits a form. The intended behavior of the request is usually to create something in a database. There are other ways to initiate `POST` request like [postman](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en)
 
 ### I Do: Creating things - WDI App (Rest of Class)
 
@@ -417,7 +414,7 @@ To make a `put` request, we need to 'fake it' in our form with a hidden input fo
   <label for="instructor[first_name]">First Name:</label>
   <input name="instructor[first_name]" value="<%= @instructor.first_name %>">
 
-  <label for="instructorx[last_name]">Last Name:</label>
+  <label for="instructor[last_name]">Last Name:</label>
   <input name="instructor[last_name]" value="<%= @instructor.last_name %>">
 
   <label for="instructor[age]">Age:</label>
