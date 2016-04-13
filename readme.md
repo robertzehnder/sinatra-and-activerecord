@@ -181,7 +181,7 @@ The codebase I'll be working in has all of the same working parts as the one you
 
 Step-by-step, you're going to add the 7 RESTful routes for artists, and the corresponding views. We're also going to use AR to make sure that the data is persisted.
 
-### The Index Route - WDI App (15/95)
+### I Do: The Index Route - WDI App (15/95)
 
 Now that we have the basic structure in place, let's start to put everything together. One of the most common features in the web today is the `index`. This is a feature that lists out collections. In your case you might want a feature to list out all of the artists for your app. That's what the index does.
 
@@ -337,6 +337,8 @@ When I enter a new name it gets added to the list! Let's take a closer look at t
 
 
 Keeping these things in mind, let's see what a post request to create objects looks like in a sinatra application.
+
+#### The Post Request
 
 In `app.rb`:
 
