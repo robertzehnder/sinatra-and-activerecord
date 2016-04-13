@@ -175,7 +175,7 @@ require_relative 'models/song'
 # ATTENTION
 From this point, I will be coding the I do portion of the new material in a wdi_app the same domain used in the active record class. You will continue to code on tunr. If at any point your code contains the words `wdi`, `instructor`, or `student` in any variant, you are doing something incorrectly.
 
-> Reference the code in the I do's to complete the objectives for TUNR. Additionally there are solution branches for each step of this process, the solution branch will be linked at the end of each corresponding section.
+> Reference the code in the I do's to complete the objectives for TUNR.
 
 The codebase I'll be working in has all of the same working parts as the one you're currently working with.
 
