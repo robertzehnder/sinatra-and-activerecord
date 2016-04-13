@@ -61,8 +61,8 @@ Here's a summary of the important folders / files in our app. It's important to 
     - static assets
       - JS, CSS, images, fonts
   - *app.rb*
-   - the entry point to our application
-   - start the application with `ruby app.rb`
+    - the entry point to our application
+    - start the application with `ruby app.rb`
   - *console.rb*
     - interact with models and data in the database
 
@@ -72,7 +72,7 @@ For this lesson, we'll be using [Tunr](http://github.com/ga-dc/tunr_sinatra), so
 
 In this repo are three files `artist_data.rb`, `song_data.rb`, `seeds.rb` and `console.rb`. Ultimately we want to use the `seeds.rb` file to seed our database and the `console.rb` file to be a REPL for our Sinatra app.
 
-T & T (15/25)
+#### T & T (10/25)
 With a partner, write down some facts about what these files do and what we need to get these file to work.
 
 Here's some things to start thinking about:
@@ -194,6 +194,8 @@ get '/instructors' do
 end
 ```
 
+> This symbol syntax has to have quotes because we use a `/` in the path. This is an alternate way to write symbols. Note: this is generally uncommon.
+
 There's one big problem with this, we don't actually have any views. Let's make a directory for them and the view we need for the index feature
 
 ```bash
@@ -207,7 +209,7 @@ In `views/instructors/index.erb`:
 ```html
 <h2>All Instructors</h2>
 <% @instructors.each do |instructor|%>
-  <div><%= instructor.first_name %></div>
+  <p><%= instructor.first_name %></p>
 <% end %>
 ```
 
@@ -233,8 +235,12 @@ It's corresponding view `views/instructors/show`:
 ```html
 <h2><a href="/instructors">All Instructors</a></h2>
 <div class="instructor">
-  Instructor First Name: <%= @instructor.first_name %>
-  Instructor Age: <%= @instructor.age %>
+  <p>
+    Instructor First Name: <%= @instructor.first_name %>
+  </p>
+  <p>
+    Instructor Age: <%= @instructor.age %>
+  </p>
 </div>
 ```
 
@@ -247,9 +253,9 @@ in `views/instructors/index`:
 ```html
 <h2>All Instructors</h2>
 <% @instructors.each do |instructor|%>
-  <div class="instructor">
+  <p class="instructor">
     <a href="/instructors/<%= instructor.id %>"><%= instructor.first_name %></a>
-  </div>
+  </p>
 <% end %>
 ```
 
@@ -260,13 +266,15 @@ Representational State Transfer. REST is a convention that we, as developers, fo
 
 REST defines five main methods, each of which corresponds to one of the CRUD functionalities in a database.
 
-| Method | Crud functionality |
+| Method | CRUD functionality |
 |---|---|
 |GET| read |
 |POST| create |
 |PUT| update |
 |PATCH| update |
 |DELETE| delete |
+
+Checkout appendix on the bottom of this lesson plan.
 
 We've done `GET` requests, the next thing we're going to talk about is `POST` requests. There a little bit different in the way they get initiated.
 
@@ -322,9 +330,10 @@ When I enter a new name it gets added to the list! Let's take a closer look at t
 ```
 
 3 things to take away from this form:
+
 1. the action inside the form tag corresponds to the path of the `post` request in `app.rb`.
 2. the method corresponds to the `post` HTTP verb of the request
-3. the `input`'s name attribute corresponds to the parameter value used in the `post` request in `app.rb`
+3. the `input`'s name attribute corresponds to the parameter `key` used in the corresponding `post` controller/method in `app.rb`
 
 
 Keeping these things in mind, let's see what a post request to create objects looks like in a sinatra application.
@@ -333,12 +342,12 @@ In `app.rb`:
 
 ```ruby
 post '/instructors' do
-  @instructor = Instructor.create(params[:instructor])
+  @instructor = Instructor.create(first_name: params[:first_name], last_name: params[:last_name], age: params[:age])
   redirect "/instructors/#{@instructor.id}"
 end
 ```
 
-> if you're confused by params[:instructor] thats ok, we haven't gone over that yet. One thing we do know, is that params is a hash and `:instructor` is a key in it. Later, drop a `binding.pry` after the request to inspect the parameters once you've built out the form.
+> if you're confused by all the different params thats ok, we haven't created the form for that yet. One thing we do know, is that params is a hash and that were accessing values of it with keys.
 
 So we've defined the post request, but how do we make that request to our server? We can build a form that will submit post requests to that path. In order to do that, we need to create a new view.
 
@@ -360,6 +369,25 @@ Here's the corresponding view `views/instructors/new`:
 
 <form action="/instructors" method="post" >
   <label>Name:</label>
+  <input name="first_name">
+
+  <label>Last Name:</label>
+  <input name="last_name">
+
+  <label>Age:</label>
+  <input name="age">
+
+  <input type="submit" value="Create">
+</form>
+```
+
+There's actually a better way to do this, we can name space our parameter in forms as well.
+
+```html
+<h2>New Artist</h2>
+
+<form action="/instructors" method="post" >
+  <label>Name:</label>
   <input name="instructor[first_name]">
 
   <label>Last Name:</label>
@@ -371,6 +399,16 @@ Here's the corresponding view `views/instructors/new`:
   <input type="submit" value="Create">
 </form>
 ```
+
+With this structure, we need to update our `post` request to use this nested structure in `app.rb`:
+
+```ruby
+post '/instructors' do
+  @instructor = Instructor.create(params[:instructor])
+  redirect "/instructors/#{@instructor.id}"
+end
+```
+
 
 Here are some important parts about this code:
 - the parameter values being passed in this form are nested under the namespace of `instructor`
