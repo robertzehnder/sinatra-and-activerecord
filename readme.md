@@ -54,11 +54,9 @@ Here's a summary of the important folders / files in our app. It's important to 
     - classes that inherit from ActiveRecord
   - **controllers**
     - route definitions (`get "/artists" do`)
+    - for now `app.rb`
   - **views**
     - erb templates
-    - *layout.erb*
-      - a template for every view
-      - calls `yield` (loads another template)
   - **public**
     - static assets
       - JS, CSS, images, fonts
