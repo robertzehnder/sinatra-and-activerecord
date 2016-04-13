@@ -497,3 +497,18 @@ This is part of a view that initiates that request.
 ```
 
 Where does this view go? Basically wherever you want the ability to delete an instructor so long as `@instructor` is the instructor that should be deleted when that request goes off. Sometimes it goes in the `edit` view other times it goes in the `index` view.
+
+
+
+
+Example of the 7 RESTful paths for standard CRUD in an active record web app. This chart shows examples using the model `animal`.
+
+|Path| Method | CRUD functionality | feature it's part of |
+|---|---|---|---|
+| `/animals`          | GET    | read   | index - show all models  |
+| `/animals/:id`      | GET    | read   | show single model  |
+| `/animals/new`      | GET    | read   | model creation |
+| `/animals`          | POST   | create | model creation |
+| `/animals/:id/edit` | PUT    | read   | edit single model |
+| `/animals/:id`      | PATCH  | update | edit single model |
+| `/animals/:id`      | DELETE | delete | delete single model |
