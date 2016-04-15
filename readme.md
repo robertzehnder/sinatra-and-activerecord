@@ -509,6 +509,6 @@ Example of the 7 RESTful paths for standard CRUD in an active record web app. Th
 | `/animals/:id`      | GET    | read   | show  | show single model  |
 | `/animals/new`      | GET    | read   | new   | form for model creation |
 | `/animals`          | POST   | create | create | accept data from new form |
-| `/animals/:id/edit` | PUT    | read   | edit | form to edit a single model |
-| `/animals/:id`      | PATCH  | update | update | accept data from edit form |
+| `/animals/:id/edit` | GET    | read   | edit | form to edit a single model |
+| `/animals/:id`      | PUT  | update | update | accept data from edit form |
 | `/animals/:id`      | DELETE | delete | destroy | delete single model |
