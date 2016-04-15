@@ -503,12 +503,12 @@ Where does this view go? Basically wherever you want the ability to delete an in
 
 Example of the 7 RESTful paths for standard CRUD in an active record web app. This chart shows examples using the model `animal`.
 
-|Path| Method | CRUD functionality | feature it's part of |
-|---|---|---|---|
-| `/animals`          | GET    | read   | index - show all models  |
-| `/animals/:id`      | GET    | read   | show single model  |
-| `/animals/new`      | GET    | read   | form for model creation |
-| `/animals`          | POST   | create | accept data from new form |
-| `/animals/:id/edit` | PUT    | read   | form to edit a single model |
-| `/animals/:id`      | PATCH  | update | accept data from edit form |
-| `/animals/:id`      | DELETE | delete | delete single model |
+|Path| Method | CRUD functionality | action name | feature it's part of |
+|---|---|---|---|---|
+| `/animals`          | GET    | read   | index | show all models  |
+| `/animals/:id`      | GET    | read   | show  | show single model  |
+| `/animals/new`      | GET    | read   | new   | form for model creation |
+| `/animals`          | POST   | create | create | accept data from new form |
+| `/animals/:id/edit` | PUT    | read   | edit | form to edit a single model |
+| `/animals/:id`      | PATCH  | update | update | accept data from edit form |
+| `/animals/:id`      | DELETE | delete | destroy | delete single model |
