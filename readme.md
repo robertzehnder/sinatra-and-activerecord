@@ -446,7 +446,7 @@ A big problem with `put` and `delete` requests is that they aren't native to HTM
 To make a `put` request, we need to 'fake it' in our form with a hidden input for the `_method` param:
 
 ```html
-<form action="/artists/<%= @artist.id %>" method="post">
+<form action="/instructors/<%= @instructor.id %>" method="post">
   <input type="hidden" name="_method" value="put">
 
   <label for="instructor[first_name]">First Name:</label>
