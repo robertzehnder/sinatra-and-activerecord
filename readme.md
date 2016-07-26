@@ -1,5 +1,10 @@
 # Sinatra and ActiveRecord
 
+## Screencast for AR/Sinatra Demo
+- [Part 1](https://youtu.be/Z25L3e4R5Nw)
+- [Part 2](https://youtu.be/8j628_XN1bo)
+- [Part 3](https://youtu.be/xtzhvIbWoQQ)
+
 ## Learning Objectives
 
 - Explain the role of ActiveRecord in a web app
@@ -367,7 +372,7 @@ end
 Here's the corresponding view `views/instructors/new`:
 
 ```html
-<h2>New Artist</h2>
+<h2>New Instructor</h2>
 
 <form action="/instructors" method="post" >
   <label>Name:</label>
@@ -386,7 +391,7 @@ Here's the corresponding view `views/instructors/new`:
 There's actually a better way to do this, we can name space our parameter in forms as well.
 
 ```html
-<h2>New Artist</h2>
+<h2>New Instructor</h2>
 
 <form action="/instructors" method="post" >
   <label>Name:</label>
