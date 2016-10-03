@@ -29,6 +29,7 @@ How exactly can ActiveRecord and Sinatra work together? Their relationship is be
 1.  The user makes a request (e.g., clicking a link, typing in a URL). **Sinatra** receives the request.
 2. **Sinatra** matches the request to the appropriate route that we've defined in our app.
 3. That route contains a block of code to run in response. We call this **controller** code. This code is written by us and determines how to handle that request. This code is unique to our app.
+  - In Sinatra, our routes and controller code live in the same file. This will change with Rails.
 4. In most cases, the controller will use ActiveRecord methods to...
   - Create, read, update or destroy data in the **database**.
 5. Once the **controller** has done its job and gotten any data it needs, it renders a **view** or redirects to a new **request**, which is displayed back to the user in the browser.
