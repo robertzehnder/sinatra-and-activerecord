@@ -131,7 +131,7 @@ We've created a file for you called `console.rb`. Take a minute to read through 
 
 This file isn't special. We've just written it so that it loads ActiveRecord, connects to the database, loads our models and allows us to interact with them using the Pry REPL.
 
-**tl;dr** - We can use `console.rb` to test our models without loading up Sinatra.
+> **tl;dr** - We can use `console.rb` to test our models without loading up Sinatra.
 
 #### You Do: Play with `console.rb` (5 minutes / 0:45)
 
