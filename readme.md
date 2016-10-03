@@ -441,6 +441,8 @@ Here are some important parts about this code...
 
 Thats it! Now we have the ability to create new instructors.
 
+## You Do: Create & New - Tunr
+
 ### Editing Models (Lab Reference)
 
 Another common feature in web applications is the ability to modify data in a database. In order for the user to manipulate data, you(the developer), need to create an interface for them to do that. We need 2 routes for this feature, one that displays the interface to edit, and one that actually updates the database.
@@ -495,6 +497,8 @@ Let's provide a link to the edit page in the `show` feature of our application. 
 
 > This is where it is now, but we can put this anywhere so long as we can provide an instructor id.
 
+## You Do: Update & Edit - Tunr
+
 ### Deleting Models (Lab Reference)
 
 Ever delete a tweet? That's a feature! In web apps, you want to be able to allow users to delete things - or things you think it's ok for them to delete - from your database.
@@ -520,6 +524,8 @@ This is part of a view that initiates that request...
 ```
 
 Where does this view go? Basically wherever you want the ability to delete an instructor so long as `@instructor` is the instructor that should be deleted when that request goes off. Sometimes it goes in the `edit` view. Other times it goes in the `index` view.
+
+## You Do: Delete - Tunr
 
 ## Closing / Questions
 
