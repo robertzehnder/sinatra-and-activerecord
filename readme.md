@@ -61,13 +61,13 @@ Here's a summary of the important folders and files in our app. It's important t
   - The entry point to our application
   - Start the application with `ruby app.rb`
 - *console.rb*
-  - Interact with models and data in the database
+  - Interact with models and data in the database via REPL.
 
 For this lesson, we'll be using [Tunr](http://github.com/ga-dc/tunr_sinatra). Go ahead and clone it and change directories into the `tunr` folder.
 
 ### Goal: Seed the database.
 
-In this repo are four files: `artist_data.rb`, `song_data.rb`, `seeds.rb` and `console.rb`. We want to use the `seeds.rb` file to seed our database and the `console.rb` file to be a REPL for our Sinatra app.
+In this repo are three files of note: `artist_data.rb`, `song_data.rb` and `seeds.rb`. We want to use the `seeds.rb` file to seed our database.
 
 #### Turn & Talk (10 minutes / 0:25)
 
@@ -82,7 +82,6 @@ With a partner, explore the four aforementioned files. Be prepared to answer the
 - What is `require_relative` and why is it used in this file so many times in `seeds.rb`?
   - What file(s) will we need to get this work?
   - What file(s) will we need that aren't being required currently?
-- What is the purpose of `console.rb`?
 
 
 ## Data Model
@@ -125,27 +124,7 @@ Create files for your `Artist` and `Song` classes in the `models` folder. Rememb
 
 > Is there any old code that we can leverage?
 
-### I Do: Using `console.rb`
-
-We've created a file for you called `console.rb`. Take a minute to read through it and see what it's doing.
-
-This file isn't special. We've just written it so that it loads ActiveRecord, connects to the database, loads our models and allows us to interact with them using the Pry REPL.
-
-> **tl;dr** - We can use `console.rb` to test our models without loading up Sinatra.
-
-#### You Do: Play with `console.rb` (5 minutes / 0:45)
-
-Use `console.rb` to create 2 artists and 4 songs. Each song should be associated with - or "belong to" - an artist.
-
-```bash
-$ bundle exec ruby console.rb
-```
-
-<!-- AM: Do we need to use bundle exec here? -->
-
-## Break (10 minutes / 0:55)
-
-## We Do: Load Seed Data (5 minutes / 1:00)
+## We Do: Load Seed Data (5 minutes / 0:45)
 
 Take a look at `db/seeds.rb`. We've taken some data from the iTunes API, and formatted / saved it so we can load it into our database using AR.
 
@@ -166,7 +145,7 @@ $ bundle exec ruby db/seeds.rb
 
 </details>
 
-## Setting up our Sinatra app (10 minutes / 1:10)
+## Setting up our Sinatra app (10 minutes / 0:55)
 
 > At this point in the lesson, you can either proceed with your code or checkout the `solution_step_1` branch to continue.
 
@@ -191,6 +170,8 @@ require_relative 'models/artist'
 require_relative 'models/song'
 ```
 
+## Break (10 minutes / 1:05)
+
 ### Important Note
 
 From this point, I will be coding the I do portion of the new material in a `wdi_app` the same domain used in the active record class. You will continue to code on Tunr. If at any point your code contains the words `wdi`, `instructor`, or `student` in any variant, you are doing something incorrectly.
@@ -199,7 +180,7 @@ Reference the code in the I Do's to complete the objectives for Tunr. The `wdi_a
 
 Step by step, you're going to add the 7 RESTful routes for artists along with their corresponding views. We're also going to use ActiveRecord to make sure that the data is being persisted.
 
-### I Do: Index - WDI App (15 minutes / 1:25)
+### I Do: Index - WDI App (15 minutes / 1:20)
 
 Now that we have the basic structure in place, let's start to put everything together. One of the most common features in the web today is the `index`. This is a feature that lists out collections. In your case you might want a feature to list out all of the artists for your app. That's what the index does.
 
@@ -233,11 +214,11 @@ In `views/instructors/index.erb`...
 
 If we run the application - `$ ruby app.rb` - and visit `http://localhost:4567/instructors`, we can see all the instructors' first names.
 
-### You Do: Index - Tunr (15 minutes / 1:40)
+### You Do: Index - Tunr (15 minutes / 1:35)
 
 > 10 minutes exercise. 5 minutes review.
 
-### I Do: Show - WDI App (10 minutes / 1:50)
+### I Do: Show - WDI App (10 minutes / 1:45)
 
 Another common feature in web apps is to have a page dedicated to a single item stored in the database. We often refer to this functionality as "show."
 
@@ -275,7 +256,7 @@ in `views/instructors/index.erb`...
 <% end %>
 ```
 
-## You Do: Show - Tunr (10 minutes / 2:00)
+## You Do: Show - Tunr (10 minutes / 1:55)
 
 > 5 minutes exercise. 5 minutes review.
 
