@@ -13,8 +13,8 @@
 
 ## Why ActiveRecord and Sinatra?
 
-Sinatra helps us build simple web applications quickly + easily. But we have no
-way to store data. ActiveRecord lets us store data in a DB easily but has no
+Sinatra helps us build simple web applications quickly. We do not, however, have any
+way to persist data. ActiveRecord, on the other hand, lets us store data in a database easily but has no
 native web interface - only the command line.
 
 Put the two together, and we can build an app with a web interface that is
@@ -42,7 +42,9 @@ How exactly can ActiveRecord and Sinatra work together? Their relationship is be
 
 As our apps get more complex, they begin to require lots of different dependencies. It's very important to start separating our concerns.
 
-Here's a summary of the important folders and files in our app. It's important to note that some of these are expected by sinatra (e.g., `views`) and the rest are just convention to match our upcoming transition to Rails.
+Below is a summary of the important folders and files in our app. It's important to note that some of these are expected by sinatra (e.g., `views`) and the rest are just convention to match our upcoming transition to Rails.
+
+For this lesson, we'll be using [Tunr](http://github.com/ga-dc/tunr_sinatra). Go ahead and clone it and change directories into the `tunr` folder.
 
 **`tunr`**
 - **`db`**
@@ -62,8 +64,6 @@ Here's a summary of the important folders and files in our app. It's important t
   - Start the application with `ruby app.rb`
 - *console.rb*
   - Interact with models and data in the database via REPL.
-
-For this lesson, we'll be using [Tunr](http://github.com/ga-dc/tunr_sinatra). Go ahead and clone it and change directories into the `tunr` folder.
 
 ### Goal: Seed the database.
 
