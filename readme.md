@@ -22,7 +22,7 @@ backed by a database.
 
 > Demonstrate Tunr as an example of this.
 
-## The MVC Paradigm (15 minutes / 0:15)
+## The Request-Response Cycle (15 minutes / 0:15)
 
 How exactly can ActiveRecord and Sinatra work together? Their relationship is best described through the **request-response** cycle...
 
