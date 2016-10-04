@@ -44,7 +44,7 @@ As our apps get more complex, they begin to require lots of different dependenci
 
 Below is a summary of the important folders and files in our app. It's important to note that some of these are expected by sinatra (e.g., `views`) and the rest are just convention to match our upcoming transition to Rails.
 
-For this lesson, we'll be using [Tunr](http://github.com/ga-dc/tunr_sinatra). Go ahead and clone it and change directories into the `tunr` folder.
+For this lesson, we'll be using [Tunr](http://github.com/ga-wdi-exercises/tunr_sinatra). Go ahead and clone it and change directories into the `tunr` folder.
 
 **`tunr`**
 - **`db`**
@@ -102,9 +102,9 @@ Create the schema file in the db directory...
 $ touch db/schema.sql
 ```
 
-Using our ERD, fill in `db/schema.sql` with SQL to create the Schema. Look at the readme for a guide to the attributes of each model.
+Using our ERD, fill in `db/schema.sql` with SQL to create the Schema. Look at the Tunr readme for a guide to the attributes of each model.
 
-<!-- AM: Include a link to SQL reference -->
+> Not sure what the schema should look like? Use the [schema from the Library SQL exercise](https://github.com/ga-wdi-exercises/library_sql/blob/master/schema.sql) as a reference.
 
 Once your schema is good to go, create the Tunr database via the command line (not `psql`)...
 
@@ -131,7 +131,7 @@ Take a look at `db/seeds.rb`. We've taken some data from the iTunes API, and for
 Go ahead and run the seed script...
 
 ```bash
-$ bundle exec ruby db/seeds.rb
+$ ruby db/seeds.rb
 ```
 
 <details>
