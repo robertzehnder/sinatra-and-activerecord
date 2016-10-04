@@ -122,25 +122,25 @@ $ psql -d tunr_db < db/schema.sql
   <summary><strong>If you get stuck...</strong></summary>
 
   ```sql
-  DROP TABLE IF EXISTS songs           CASCADE;
-  DROP TABLE IF EXISTS artists         CASCADE;
+  DROP TABLE IF EXISTS songs;
+  DROP TABLE IF EXISTS artists;
 
   create table artists (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(255),
-    photo_url VARCHAR(512),
-    nationality VARCHAR(255)
+    name VARCHAR,
+    photo_url VARCHAR,
+    nationality VARCHAR
   );
 
   CREATE TABLE songs (
     id SERIAL PRIMARY KEY,
-    title VARCHAR(255),
-    album VARCHAR(255),
-    preview_url VARCHAR(512),
-    artist_id INTEGER REFERENCES artists(id)
+    title VARCHAR,
+    album VARCHAR,
+    preview_url VARCHAR,
+    artist_id INTEGER
   );
   ```
-  
+
 </details>
 
 ### You Do: Define ActiveRecord Models (5 minutes / 0:40)
